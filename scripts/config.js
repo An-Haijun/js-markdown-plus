@@ -37,7 +37,7 @@ const resolve = p => {
 const builds = {
   'web-full-dev': {
     entry: resolve('jmp/index.js'),
-    dest: resolve(`dist-v${version}/jmp.js`),
+    dest: resolve(`dist/jmp.js`),
     format: 'umd',
     env: 'development',
     alias: {
@@ -48,39 +48,39 @@ const builds = {
       copy({
         targets: [{
             src: 'node_modules/codemirror/lib',
-            dest: `dist-v${version}/lib/codemirror`
+            dest: `dist/lib/codemirror`
           },
           {
             src: 'node_modules/codemirror/mode',
-            dest: `dist-v${version}/lib/codemirror`
+            dest: `dist/lib/codemirror`
           },
           {
             src: 'node_modules/codemirror/theme',
-            dest: `dist-v${version}/lib/codemirror`
+            dest: `dist/lib/codemirror`
           },
           {
             src: 'src/lib/highlight/highlight.min.js',
-            dest: `dist-v${version}/lib/highlight`
+            dest: `dist/lib/highlight`
           },
           {
             src: 'src/lib/highlight/languages/javascript.min.js',
-            dest: `dist-v${version}/lib/highlight/languages`
+            dest: `dist/lib/highlight/languages`
           },
           {
             src: 'src/lib/highlight/agate.min.css',
-            dest: `dist-v${version}/lib/highlight`
+            dest: `dist/lib/highlight`
           },
           {
             src: 'node_modules/lodash/lodash.js',
-            dest: `dist-v${version}/lib/lodash`
+            dest: `dist/lib/lodash`
           },
           {
             src: 'src/lib/mdjs/mdjs.js',
-            dest: `dist-v${version}/lib/mdjs`
+            dest: `dist/lib/mdjs`
           },
           {
             src: 'src/font',
-            dest: `dist-v${version}`
+            dest: `dist`
           }
         ]
       })
@@ -89,7 +89,7 @@ const builds = {
   // Runtime+compiler production build  (Browser)
   'web-full-prod': {
     entry: resolve('jmp/index.js'),
-    dest: resolve(`dist-v${version}/jmp.min.js`),
+    dest: resolve(`dist/jmp.min.js`),
     format: 'umd',
     env: 'production',
     alias: {

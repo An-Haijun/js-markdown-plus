@@ -5,8 +5,8 @@ const rollup = require('rollup')
 const terser = require('terser')
 const version = process.env.VERSION || require('../package.json').version
 
-if (!fs.existsSync(`dist-v${version}`)) {
-  fs.mkdirSync(`dist-v${version}`)
+if (!fs.existsSync(`dist`)) {
+  fs.mkdirSync(`dist`)
 }
 
 let builds = require('./config').getAllBuilds()
