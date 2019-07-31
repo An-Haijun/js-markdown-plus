@@ -17,7 +17,7 @@ export function navbar(options) {
   });
 
   jmpNavNode.style.minHeight = options.height + 'px';
-
+  console.log(jmpNavNode.style.minHeight);
   const navList = config.navList,
     menus = config.menus;
   try {
@@ -30,12 +30,14 @@ export function navbar(options) {
             return item === child.index;
           });
 
-          item = childLists && childLists.length > 0 && childLists[0];
+          item = childLists && childLists.length > 0? childLists[0] : '';
 
           return item;
         });
         navItems.forEach(function (item) {
-          navElItems = navElItems + '<li id="' + item.id + '" class="' + item['class'] + '"><i class="item-icon ' + item.icon + '"></i></li>';
+          if(item) {
+            navElItems = navElItems + '<li id="' + item.id + '" class="' + item['class'] + '"><i class="item-icon ' + item.icon + '"></i></li>';
+          }
         });;
         return navElItems;
       }()) +

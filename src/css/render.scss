@@ -19,14 +19,22 @@
   align-items: center;
   box-sizing: border-box;
   padding: 0 29px;
+  margin: 0;
+  line-height: inherit;
 }
 
 .jmp-wrapper #jmp-nav ul .jmp-nav-item {
   height: 100%;
-  padding: 0 16px;
+  padding: 6px 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
+  border-radius: 6px;
+  margin: 0 8px;
 }
 
 .jmp-wrapper #jmp-nav ul .jmp-nav-item:hover {

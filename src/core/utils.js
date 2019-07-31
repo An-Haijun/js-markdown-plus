@@ -45,6 +45,9 @@ export function callHook(jm, type, res) {
     return false;
   }
 
+  if(typeof jm[type] !== 'function') {
+    return;
+  }
 
   res ? jm[type](res) : jm[type]();
 }

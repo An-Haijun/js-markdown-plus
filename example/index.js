@@ -1,16 +1,7 @@
 /* 引入 jmp-component */
-var mdjs = new Mdjs();
-
 var jm = new Jmp({
   el: '#jmp-md',
   theme: '',
-  compileT: {
-    handle: mdjs.md2html,
-    options: {
-      // 换行增加块级元素
-      alwaysNewline: true
-    }
-  },
   menus: ['bold', 'italic', 'underline', 'del', 'sup', 'sub', 'disorder', 'order', 'code', 'image', 'link', 'table', 'undo', 'redo', 'full'],
   navMenus: [{
     name: '撤销',

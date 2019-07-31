@@ -17,9 +17,9 @@ import config from './config';
 
 import { Compile } from './compile';
 
-import hljs from 'highlight';
+import hljs from 'highlight.js';
 
-import CodeMirror from 'CodeMirror';
+import CodeMirror from 'codemirror';
 
 /**
  * 以防抖的形式监听文本变化，并准备渲染 html
@@ -115,7 +115,7 @@ export class Render {
     this.jm = jm;
     this.options = jm.$options;
 
-    const compile = this.compile = new Compile(jm);
+    const compile = new Compile(jm);
 
     const el = jm.el;
     // 渲染组件到 View

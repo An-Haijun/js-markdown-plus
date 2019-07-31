@@ -4,12 +4,13 @@
  * Released under the MIT License.
  */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('lodash'), require('highlight'), require('CodeMirror')) :
-  typeof define === 'function' && define.amd ? define(['lodash', 'highlight', 'CodeMirror'], factory) :
-  (global = global || self, global.Jmp = factory(global._, global.hljs, global.CodeMirror));
-}(this, function (_, hljs, CodeMirror) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('lodash'), require('marked'), require('highlight'), require('codemirror')) :
+  typeof define === 'function' && define.amd ? define(['lodash', 'marked', 'highlight', 'codemirror'], factory) :
+  (global = global || self, global.Jmp = factory(global._, global.marked, global.hljs, global.CodeMirror));
+}(this, function (_, marked, hljs, CodeMirror) { 'use strict';
 
   _ = _ && _.hasOwnProperty('default') ? _['default'] : _;
+  marked = marked && marked.hasOwnProperty('default') ? marked['default'] : marked;
   hljs = hljs && hljs.hasOwnProperty('default') ? hljs['default'] : hljs;
   CodeMirror = CodeMirror && CodeMirror.hasOwnProperty('default') ? CodeMirror['default'] : CodeMirror;
 
@@ -510,13 +511,11 @@
   }
 
   var Compile = function Compile(jm) {
-    this.compileT = jm.$options.compileT;
   };
 
   Compile.prototype.start = function start (ctx) {
-    var handle = this.compileT['handle'],
-      handleOptions = this.compileT['options'] ? this.compileT['options'] : {};
-    var html = handle(ctx, handleOptions);
+    var handle = marked;
+    var html = handle(ctx);
       
     return html;
   };
@@ -608,7 +607,7 @@
     this.jm = jm;
     this.options = jm.$options;
 
-    var compile = this.compile = new Compile(jm);
+    var compile = new Compile(jm);
 
     var el = jm.el;
     // 渲染组件到 View

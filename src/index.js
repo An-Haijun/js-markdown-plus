@@ -1,8 +1,11 @@
 
+import 'codemirror/lib/codemirror.css';
+import 'highlight.js/styles/agate.css';
 import './css/basic.scss';
 import './css/component.scss';
 import './css/md-html.scss';
 import './css/render.scss';
+
 
 import config from './core/config';
 import { Render } from './core/render';
