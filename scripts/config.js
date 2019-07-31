@@ -75,8 +75,8 @@ const builds = {
             dest: `dist/lib/lodash`
           },
           {
-            src: 'src/lib/mdjs/marked.js',
-            dest: `dist/lib/mdjs`
+            src: 'src/lib/marked/marked.js',
+            dest: `dist/lib/marked`
           },
           {
             src: 'src/font',
@@ -103,7 +103,7 @@ function genConfig(name) {
   const opts = builds[name]
   const config = {
     input: opts.entry,
-    external: ['lodash', 'codemirror', 'highlight', 'marked'],
+    external: ['lodash', 'codemirror', 'highlight.js', 'marked'],
     plugins: [
       postcss({
         plugins: [

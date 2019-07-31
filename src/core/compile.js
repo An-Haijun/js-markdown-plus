@@ -1,4 +1,4 @@
-import Marked from "marked";
+import marked from "marked";
 
 export class Compile {
 
@@ -6,7 +6,7 @@ export class Compile {
   }
 
   start(ctx) {
-    const handle = Marked;
+    const handle = marked;
     const html = handle(ctx);
     
     return html;
