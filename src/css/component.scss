@@ -1,0 +1,168 @@
+.jm-input .jm-input-content {
+  display: flex;
+  justify-content: space-between;
+  width: 99.66%;
+  height: 32px;
+  border: 1px solid #bbb;
+  align-items: center;
+}
+
+.jm-input .jm-input-content .jm-input-label-left {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  border-right: 1px solid #bbb;
+}
+
+.jm-input .jm-input-content input {
+  width: 80%;
+  height: 100%;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 8px;
+  font-size: 14px;
+  border-width: 0;
+  background-color: transparent;
+}
+
+.jm-input .jm-input-content .mini {
+  width: 120px;
+  height: 24px;
+}
+
+.jmp-dialog-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content .jmp-dialog-image {
+  width: 412px;
+  background-color: #fafafa;
+  border-radius: 6px;
+  padding: 32px 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #595959;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content .jmp-dialog-image .dialog-title {
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+  margin-bottom: 32px;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content .jmp-dialog-image .dialog-content {
+  font-size: 16px;
+  padding: 16px;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content .jmp-dialog-image .dialog-content .btn-upload {
+  position: relative;
+  text-align: center;
+  height: 42px;
+  background-color: #565656;
+  border: 1px solid #565656;
+  line-height: 42px;
+  margin-bottom: 16px;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content .jmp-dialog-image .dialog-content .btn-upload span {
+  color: #fafafa;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content .jmp-dialog-image .dialog-content .btn-upload .upload-file {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content .jmp-dialog-image .dialog-content .add-link {
+  position: relative;
+  text-align: center;
+  height: 42px;
+  display: none;
+  line-height: 42px;
+  margin-bottom: 16px;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content .jmp-dialog-image .dialog-content .btn-link {
+  position: relative;
+  text-align: center;
+  height: 42px;
+  /* background-color: #fafafa;
+  border: 1px solid #565656; */
+  line-height: 42px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content .jmp-dialog-image .dialog-content .btn-upload-image {
+  display: none;
+  position: relative;
+  text-align: center;
+  height: 42px;
+  /* background-color: #fafafa;
+  border: 1px solid #565656; */
+  line-height: 42px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content .jmp-dialog-image .dialog-content .btn-link span {
+  color: #565656;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content .jmp-dialog-image .dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 16px;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content .jmp-dialog-image .dialog-footer .btn-cancel {
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.jmp-dialog-wrapper .jmp-dialog-content .jmp-dialog-image .dialog-footer .btn-sure {
+  font-size: 14px;
+  letter-spacing: 1px;
+  border: 1px solid #565656;
+  border-radius: 8px;
+  padding: 2px 8px;
+  cursor: pointer;
+  margin-left: 16px;
+}
