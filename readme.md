@@ -1,3 +1,32 @@
+# 提交 npm 包
+
+- 首先去 [npm官网](https://www.npmjs.com)注册账号
+
+full name (真实姓名)：这个看你自己
+
+email (邮箱)：填一个常用的
+
+username：随便
+
+password：随便
+
+- 发布项目
+
+```
+npm adduser
+
+npm login
+
+npm publish
+```
+
+再提交时有可能出现如下错误，该错误信息提示为：您的邮箱需要进行验证，方可提交成功。
+
+```
+npm ERR! code E403
+npm ERR! 403 Forbidden - PUT https://registry.npmjs.org/js-markdown-plus - you must verify your email before publishing a new package: https://www.npmjs.com/email-edit
+```
+
 # 项目中的插件
 
 ## 主要插件
