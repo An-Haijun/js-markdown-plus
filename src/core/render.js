@@ -164,4 +164,13 @@ export class Render {
       isSelect: options.isSelect || false
     });
   };
+
+  insertImage(title = '图片', url = '') {
+    if(!url) {
+      console.error('[Jmp]：Network image address is empty');
+      return;
+    }
+    const ctx = `![${title}](${url})`
+    this.jm.editor.setValue(ctx);
+  }
 }

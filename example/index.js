@@ -58,5 +58,6 @@ var jm = new Jmp({
   },
   uploaded: function (res) {
     console.log('[uploaded]：', res);
+    this.render.insertImage('我是一张图片：笑脸', '');
   }
 });

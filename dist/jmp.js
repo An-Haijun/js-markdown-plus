@@ -331,7 +331,6 @@
     });
 
     jmpNavNode.style.minHeight = options.height + 'px';
-    console.log(jmpNavNode.style.minHeight);
     var navList = config.navList,
       menus = config.menus;
     try {
@@ -665,6 +664,17 @@
       line: options.line || 0,
       isSelect: options.isSelect || false
     });
+  };
+  Render.prototype.insertImage = function insertImage (title, url) {
+      if ( title === void 0 ) title = '图片';
+      if ( url === void 0 ) url = '';
+
+    if(!url) {
+      console.error('[Jmp]：Network image address is empty');
+      return;
+    }
+    var ctx = "![" + title + "](" + url + ")";
+    this.jm.editor.setValue(ctx);
   };
 
   /**

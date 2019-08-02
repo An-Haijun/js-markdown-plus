@@ -17,7 +17,6 @@ export function navbar(options) {
   });
 
   jmpNavNode.style.minHeight = options.height + 'px';
-  console.log(jmpNavNode.style.minHeight);
   const navList = config.navList,
     menus = config.menus;
   try {
