@@ -35,7 +35,7 @@ export function navbar(options) {
         });
         navItems.forEach(function (item) {
           if(item) {
-            navElItems = navElItems + '<li id="' + item.id + '" class="' + item['class'] + '"><i class="item-icon ' + item.icon + '"></i></li>';
+            navElItems = navElItems + '<li id="' + item.id + '" class="' + item['class'] + '" title="'+item['name']+'"><i class="item-icon ' + item.icon + '"></i></li>';
           }
         });;
         return navElItems;
@@ -94,10 +94,19 @@ export function sideHtml(jm) {
   const jmpHtmlNode = createEl({
     name: 'div',
     attr: {
-      id: config.elementIdHtml,
       'class': config.elementClassHtml
     }
   });
+  
+  const jmpHtmlNodeContent = createEl({
+    name: 'div',
+    attr: {
+      id: config.elementIdHtml,
+      class: config.elementClassHtmlScroll
+    }
+  });
+
+  jmpHtmlNode.appendChild(jmpHtmlNodeContent);
 
   return jmpHtmlNode;
 }

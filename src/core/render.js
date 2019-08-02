@@ -15,7 +15,9 @@ import {
 
 import config from './config';
 
-import { Compile } from './compile';
+import {
+  Compile
+} from './compile';
 
 import hljs from 'highlight.js';
 
@@ -95,7 +97,7 @@ function uploadImage(jm, res) {
 
 function editorConfig(textareaNode) {
   return CodeMirror.fromTextArea(textareaNode, {
-    lineNumbers: true,
+    // lineNumbers: true,
     mode: 'markdown',
     theme: 'default',
     lineWrapping: true,
@@ -108,6 +110,53 @@ function editorConfig(textareaNode) {
     indentUnit: 4
   });
 };
+
+let mdNode = null,
+  htmlNode = null,
+  mainFlag = false, // 抵消两个滚动事件之间互相触, 
+  preFlag = false; // 如果两个 flag 都为 true，证明是反弹过来的事件引起的
+
+function asyncScroll(type) {
+  if (type == 'md') {
+    preFlag = true;
+    if (mainFlag === true) { // 抵消两个滚动事件之间互相触发
+      mainFlag = false;
+      preFlag = false;
+      return;
+    }
+    const scrollValHtml = (mdNode.scrollTop + mdNode.clientHeight) * htmlNode.scrollHeight / mdNode.scrollHeight - htmlNode.clientHeight;
+    htmlNode.scrollTop = scrollValHtml;
+    return;
+  }
+  if (type == 'html') {
+    mainFlag = true;
+    if (preFlag === true) { // 抵消两个滚动事件之间互相触发
+      mainFlag = false;
+      preFlag = false;
+      return;
+    }
+    const scrollValMd = (htmlNode.scrollTop + htmlNode.clientHeight) * mdNode.scrollHeight / htmlNode.scrollHeight - mdNode.clientHeight;
+    mdNode.scrollTop = scrollValMd;
+    return;
+  }
+}
+
+function asyncScrollMd() {
+  asyncScroll('md');
+}
+
+function asyncScrollHtml() {
+  asyncScroll('html');
+}
+
+function initAsyncScroll(md, html) {
+  mdNode = md;
+  htmlNode = html;
+
+  md.addEventListener('scroll', asyncScrollMd, false);
+
+  html.addEventListener('scroll', asyncScrollHtml, false);
+}
 
 export class Render {
 
@@ -123,6 +172,8 @@ export class Render {
 
     const htmlSide = this.htmlSide = getEl(config.elementIdHtml);
 
+    const htmlScrollSide = getEl('.' + config.elementClassHtml);
+
     const textareaSide = getEl(config.elementIdTextarea);
     const editor = this.editor = editorConfig(textareaSide);
 
@@ -130,6 +181,10 @@ export class Render {
     jm.editor = editor;
 
     handleEditor(jm, htmlSide, compile);
+
+    const mdScrollNode = editor.getScrollerElement();
+
+    initAsyncScroll(mdScrollNode, htmlScrollSide);
 
     // 渲染完成 - 通知回调
     callHook(jm, 'mounted');
@@ -166,7 +221,7 @@ export class Render {
   };
 
   insertImage(title = '图片', url = '') {
-    if(!url) {
+    if (!url) {
       console.error('[Jmp]：Network image address is empty');
       return;
     }
