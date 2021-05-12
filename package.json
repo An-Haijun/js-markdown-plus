@@ -6,7 +6,7 @@
   "repository": "https://github.com/An-Haijun/js-markdown-plus",
   "homepage": "https://github.com/An-Haijun/js-markdown-plus",
   "dependencies": {
-    "codemirror": "^5.48.2",
+    "codemirror": "^5.58.2",
     "highlight": "^0.2.4",
     "lodash": "^4.17.15",
     "marked": "^0.7.0",
