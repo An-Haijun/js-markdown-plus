@@ -9,7 +9,7 @@
     "codemirror": "^5.48.2",
     "highlight": "^0.2.4",
     "lodash": "^4.17.15",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "mdjs": "^0.1.10"
   },
   "devDependencies": {
