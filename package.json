@@ -28,7 +28,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-replace": "^2.2.0",
-    "terser": "^4.1.2",
+    "terser": "^4.8.1",
     "the-answer": "^1.0.0",
     "zlib": "^1.0.5"
   },
